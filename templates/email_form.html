@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Email Validation</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #f0f5f9;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      h1 {
+        color: #333333;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: #333333;
+      }
+
+      input[type="text"],
+      input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #70a1ff;
+        color: #ffffff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #1e90ff;
+      }
+
+      .text-success {
+        color: #28a745;
+      }
+
+      .text-danger {
+        color: #dc3545;
+      }
+
+      .text-muted {
+        color: #6c757d;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Email Validation</h1>
+      <form method="POST">
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" name="email" class="form-control" id="email" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div class="mt-3">
+        {% if is_valid %}
+        <p class="text-success">Valid Email Address!</p>
+        {% elif is_valid is none %}
+        <p class="text-muted">Submit an email address to validate.</p>
+        {% else %}
+        <p class="text-danger">Invalid Email Address!</p>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

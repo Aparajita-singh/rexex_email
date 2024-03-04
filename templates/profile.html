@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #f0f5f9;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        max-width: 600px;
+        padding: 40px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      h1 {
+        color: #333333;
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        color: #555555;
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      .btn-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .task-card {
+        padding: 20px;
+        background-color: #f7f7f7;
+        border-radius: 10px;
+        margin: 10px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        width: calc(50% - 20px); /* Adjust the width here */
+        max-width: 300px; /* Adjust the max width here */
+      }
+
+      .task-card h3 {
+        color: #333333;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .task-card p {
+        color: #555555;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .btn {
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        background-color: #70a1ff;
+        color: #ffffff;
+        font-size: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .btn:hover {
+        background-color: #1e90ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome, <span style="color: #70a1ff">{{ username }}</span></h1>
+      <p>Explore your options below:</p>
+      <div class="btn-container">
+        <div class="task-card">
+          <h3>Regex Matching</h3>
+          <p>Perform advanced pattern matching using regular expressions.</p>
+          <a href="{{ url_for('regex_match') }}" class="btn btn-lg"
+            >Start Regex Matching</a
+          >
+        </div>
+        <div class="task-card">
+          <h3>Email Validation</h3>
+          <p>
+            Validate email addresses to ensure they meet the required format.
+          </p>
+          <a href="{{ url_for('email_validation') }}" class="btn btn-lg"
+            >Start Email Validation</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

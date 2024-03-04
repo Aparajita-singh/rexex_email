@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regex Matching</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        max-width: 600px;
+        padding: 40px;
+        background-color: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      h1 {
+        color: #333333;
+        font-size: 36px;
+        margin-bottom: 30px;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+      label {
+        color: #333333;
+        font-size: 20px;
+        margin-bottom: 10px;
+        display: block;
+        font-weight: bold;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #ced4da;
+        font-size: 18px;
+        transition: border-color 0.3s ease;
+      }
+
+      input[type="text"]:focus {
+        outline: none;
+        border-color: #70a1ff;
+      }
+
+      button {
+        padding: 15px 40px;
+        border: none;
+        border-radius: 8px;
+        background-color: #70a1ff;
+        color: #ffffff;
+        font-size: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+      }
+
+      button:hover {
+        background-color: #1e90ff;
+      }
+
+      ul {
+        text-align: left;
+        margin-top: 30px;
+        padding-left: 0;
+        list-style: none;
+        font-size: 18px;
+        color: #333333;
+      }
+
+      li {
+        margin-bottom: 10px;
+        position: relative;
+      }
+
+      li:before {
+        content: "\2022";
+        color: #70a1ff;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+        position: absolute;
+        left: 0;
+        top: 0.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Regex Matching</h1>
+      <form method="POST">
+        <div class="form-group">
+          <label for="test_string">Enter Test String:</label>
+          <input
+            type="text"
+            name="test_string"
+            id="test_string"
+            placeholder="e.g., Lorem ipsum dolor sit amet"
+          />
+        </div>
+        <div class="form-group">
+          <label for="regex_pattern">Enter Regex Pattern:</label>
+          <input
+            type="text"
+            name="regex_pattern"
+            id="regex_pattern"
+            placeholder="e.g., [a-z]+"
+          />
+        </div>
+        <button type="submit">Match</button>
+      </form>
+      <div>
+        {% if matched_strings %}
+        <h3>Matched Strings:</h3>
+        <ul>
+          {% for string in matched_strings %}
+          <li>{{ string }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>
